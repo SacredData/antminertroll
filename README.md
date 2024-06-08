@@ -52,7 +52,7 @@ Run the help output by issuing `./antminertroll.sh -h`:
 
 ```sh
 
-./antminertroll.sh [-h] [-s] [-d DIR] [-t NUMBER_OF_SECONDS]
+./antminertroll.sh [-h] [-s] [-t=NUMBER_OF_SECONDS]
  All arguments are optional:
 
  -h = SHOW THE HELP
