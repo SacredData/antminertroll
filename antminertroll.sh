@@ -13,10 +13,10 @@ HELP="
  EXAMPLES:
 
  # Find all antminers on the local CIDR subnet, then probe them for data every 45 seconds
- ./antminertroll.sh -t 45
+ ./antminertroll.sh -t=45
 
  # Skip searching for antminers and use already-present antminer_ips file. Scan once per hour.
- ./antminertroll.sh -s -t 3600 
+ ./antminertroll.sh -s -t=3600 
 "
 
 ARG1=$1
