@@ -6,6 +6,6 @@ details_cmd=$(echo '{"command": "devdetails"}' | nc $ips 4028 | jq '.[]?[]? | jo
 
 date_now=$(date -u --iso-8601=seconds)
 csv_fmt="$date_now,$devs_cmd,$temps_cmd,$details_cmd"
-echo "$csv_fmt"
+echo "${csv_fmt//\"/}"
 
-echo $csv_fmt >> "$ips.csv"
+echo "${csv_fmt//\"/}" >> "$ips.csv"

@@ -24,4 +24,7 @@ parentheses to obtain the dependencies.
 All command line arguments are optional.
 
 By default, nmap will scan local area network for all available antminer
-devices.
+devices. Use `-s` to skip the scan if you already have an `antminer_ips`
+file from a previous scan.
+
+`-t=60` is the default query interval.
