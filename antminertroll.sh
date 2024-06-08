@@ -47,7 +47,7 @@ echo SKIP = ${SKIP}
 echo DIR = ${DIR}
 echo TIME = ${TIME}
 
-
+# check system $PATH for dependencies
 type -P "jq" && echo "jq is available" || exit 1
 type -P "nmap" && echo "nmap is available" || exit 1
 type -P "ip" && echo "ip is available" || exit 1
