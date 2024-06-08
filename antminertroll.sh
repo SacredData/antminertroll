@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/bin/bash
 
 HELP="
 ./antminertroll.sh [-h] [-s] [-d DIR] [-t NUMBER_OF_SECONDS]
