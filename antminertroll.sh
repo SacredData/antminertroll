@@ -8,9 +8,7 @@ HELP="
 
  -s = SKIP network scan and just use current antminer_ips file for servers list
 
- -d = DIRECTORY to output CSV files to
-
- NUMBER_OF_SECONDS = amount of seconds to wait between querying the antminers
+ -t=NUMBER_OF_SECONDS = amount of seconds to wait between querying the antminers
 
  EXAMPLES:
 
@@ -19,13 +17,11 @@ HELP="
 
  # Skip searching for antminers and use already-present antminer_ips file. Scan once per hour.
  ./antminertroll.sh -s -t 3600 
-
- # Output CSVs to /tmp and probe all antminers using the default timing of every 60 seconds.
- ./antminertroll.sh -d /tmp
 "
 
 ARG1=$1
 SKIP=NO
+TIME=60
 
 if [ "$ARG1" = "-h" ]; then
   echo "$HELP"
@@ -51,6 +47,10 @@ echo SKIP = ${SKIP}
 echo DIR = ${DIR}
 echo TIME = ${TIME}
 
+
+type -P "jq" && echo "jq is available" || exit 1
+type -P "nmap" && echo "nmap is available" || exit 1
+type -P "ip" && echo "ip is available" || exit 1
 
 if [ "$SKIP" = "NO" ]; then
   # get ip for device serving the current internet connection
